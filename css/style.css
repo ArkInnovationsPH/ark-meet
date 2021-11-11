@@ -1,0 +1,231 @@
+header {
+    height: 3em;
+    padding: 10px;
+    background-color: #343a40;
+    display: flex;
+    align-items: center;
+}
+
+html {
+  overflow-x: hidden; 
+}
+
+body {
+    background-color: #f3f3f3;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.lesson {
+    color: white;
+}
+
+.card-box {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    height:fit-content;
+    transition: all 0.3s;
+    margin-bottom: 5px;
+}
+
+.lessons-list li {
+    border-bottom: 1px solid #d7dce0;
+    padding: 15px 0px 0px 0px;
+}
+
+a.btn {
+  font-weight: bold;
+  color: white
+}
+
+.disabled-link {
+  pointer-events: none;
+}
+
+.lessons-panel, .video-player {
+  transition: all 0.3s
+}
+
+#lessons, #activities, #attendance {
+    transition: all 0.3s;
+}
+
+.table-limit {
+    max-height: 200px;
+    overflow: scroll;
+  
+}
+
+/* .table-limit .before {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  pointer-events: none;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), red 88%);
+  height: 10%;
+  opacity: 1;
+  width: 100%;
+  transition: all 0.3s;
+
+}
+
+.table-limit { 
+  position: relative;
+}
+
+.table-limit .after {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  opacity: 1;
+  pointer-events: none;
+  bottom: 35px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), red 88%);
+  height: 10%;
+  width: 100%;
+  transition: all 0.1s;
+}
+
+
+.table-limit[style*="display: none"] .after,.table-limit[style*="display: none"] .before {
+  z-index: -1
+} */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(170, 170, 170); 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
+
+.lessons-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card-box.maximized {
+  max-height: 400px;
+  opacity: 1;
+  /* overflow: auto; */
+}
+/* 
+.tag-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+} */
+
+.card-box.minimized {
+  max-height: 50px !important;
+  overflow: hidden;
+}
+
+.card-box.minimized .tag-panel {
+  opacity: 0
+}
+
+.lesson-tag {
+  color: #343a40;
+}
+
+.tag:not(.maximized):hover{
+  box-shadow: 0 0 8px #c1c1c1;
+  border: 1px solid #c1c1c1;
+  transform: scale(1.02);
+}
+
+table.table tr td {
+    vertical-align: baseline;
+}
+
+table.table button {
+    font-size: 14;
+    font-weight: bold;
+}
+.toggle-lesson-list {
+    margin: 1em;
+    width: 20px;
+  }
+  
+  .toggle-lesson-list:after, 
+  .toggle-lesson-list:before, 
+  .toggle-lesson-list div {
+    background-color: #343a40;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 3px;
+    margin: 2px 0;
+    transition: all .2s ease-in-out;
+  }
+
+  .card-box.minimized .toggle-lesson-list:before {
+    transform: unset;  
+  }
+  
+  .card-box.minimized .toggle-lesson-list:after {
+    transform: unset;  
+  }
+
+  
+  .card-box.minimized .toggle-lesson-list div {
+    transform: unset;  
+  }
+
+  /* .toggle-lesson-list.minimized:hover:before {
+    transform: translateY(2px) rotate(135deg);
+  }
+  
+  .toggle-lesson-list.minimized:hover:after {
+    transform: translateY(-8px) rotate(-135deg);
+  }
+  
+  .toggle-lesson-list.minimized:hover div {
+    transform: scale(0);
+  } */
+
+  .card-box:not(.minimized) .toggle-lesson-list:before {
+    transform: translateY(2px) rotate(135deg);
+  }
+  
+  .card-box:not(.minimized) .toggle-lesson-list:after {
+    transform: translateY(-8px) rotate(-135deg);
+  }
+  
+  .card-box:not(.minimized) .toggle-lesson-list div {
+    transform: scale(0);
+  }
+
+
+/*   
+  .toggle-lesson-list:not(.minimized):hover:before {
+    transform: unset;
+  }
+  
+  .toggle-lesson-list:not(.minimized):hover:after {
+    transform: unset;
+  }
+  
+  .toggle-lesson-list:not(.minimized):hover div {
+    transform: unset;
+  } */

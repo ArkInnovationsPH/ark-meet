@@ -1,0 +1,273 @@
+<html>
+    <head>
+        <title>Ark Meet</title>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" href="css/components/jquery-ui.css">
+        <script src="js/components/jquery-3.6.0.js"></script>
+        <script src="js/components/jquery-ui.js"></script>
+        <link rel='stylesheet', type='text/css' href='css/components/bootstrap.css'>
+        <link rel='stylesheet', type='text/css' href='css/style.css'>
+        <script>
+            $( function() {
+                $( "#lessons" ).accordion();
+                $( "#activities" ).accordion();
+                $( "#attendance" ).accordion();
+            } );
+        </script>
+    </head>
+    <body>
+        <header>
+            <span class="logo">ArkEd</span>
+            <div class="col-12 lesson">
+                <span>Human Anatomy - <span id="current-lesson"></span></span>
+            </div>
+        </header>
+        <div class="p-5">
+            <div class="row">
+
+                <div class="col-md-8 video-player">
+                    <iframe allow="camera; microphone; display-capture" src="https://meet.ark.co.th/rjallowfullscreen=" true"="" style="height: 60vh; width: 100%; border: 0px;"></iframe>
+                
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h5 class="card-title">About this Subject</h5>
+                            <div class="row">
+                              <div class="col-4 mt-4">
+                                  <h6 class="card-subtitle mb-4 text-muted">Subject Name: Human Anatomy</h6>
+                                  <h6 class="card-subtitle mb-4 text-muted">Description: Study of Human Body</h6>
+                                  <h6 class="card-subtitle mb-4 text-muted">Teacher Name: John Doe</h6>
+                                </div>
+                                <div class="col-4 mt-4">
+                                    <h6 class="card-subtitle mb-4 text-muted">Schedule:</h6>
+                                    <h6 class="card-subtitle mb-4 text-muted">Monday - 10:45 - 11:30</h6>
+                                    <h6 class="card-subtitle mb-4 text-muted">Thursday - 14:00 - 15:00</h6>
+                                    
+                                    <!-- <h6 class="card-subtitle mb-4 text-muted">Teacher Name: John Doe</h6> -->
+                                </div>
+
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                
+                <div class="col-md-4 p-0 lessons-panel">
+                    <div class="lesson-summary tag card-box maximized">
+                        <div class="col-12 row m-0 d-flex justify-content-between p-0 tag-header">
+                            <h5 class="p-2"><b>Lessons</b></h5>
+                            <div class="toggle-lesson-list maximized" content="lesson-summary" minimized=false>
+                                <div></div>
+                            </div>
+                        </div>
+    
+                        <!--<div id="lessons-panel"></div>
+                        <div id="lessons-list">
+                            thesis
+                        </div> -->
+    
+                        <div id="lessons" class="tag-panel">
+                            <h3 class="rounded-0 mt-0 lesson-name"><b>Lesson 1 - Basic Anatomy </b></h3>
+                            <div class="px-0 pt-0 table-limit" >
+                                <div class="before"></div>
+                                <table class="table ">
+                                    <!-- <thead class="b-0">
+                                        <th>Lesson</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </thead> -->
+                                    <tbody>
+                                        <tr>
+                                            <td>Head</td>
+                                            <td>--</td>
+                                            <td>11/09/21</td>
+                                            <td><span class="badge badge-success">complete</span></td>
+                                            <td><a href="http://www.drcroes.com/uploads/8/1/2/8/8128660/ch_1_introduction_to_anatomy.pdf" target="_blank" class="btn btn-success">Review Class</a></td>
+                                            <td><a href="http://www.drcroes.com/uploads/8/1/2/8/8128660/ch_1_introduction_to_anatomy.pdf" target="_blank" class="btn btn-info"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo">
+                                            </a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Heart</td>
+                                            <td>--</td>
+                                            <td>11/10/21</td>
+                                            <td><span class="badge badge-success">complete</span></td>
+                                            <td><a href="http://www.drcroes.com/uploads/8/1/2/8/8128660/ch_1_introduction_to_anatomy.pdf" target="_blank" class="btn btn-success" >Review Class</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lungs</td>
+                                            <td>--</td>
+                                            <td>11/11/21</td>
+                                            <td><span class="badge badge-warning">on going </span></td>
+                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Eyes</td>
+                                            <td>--</td>
+                                            <td>11/12/21</td>
+                                            <td><span class="badge badge-secondary">upcoming </span></td>
+                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Neck</td>
+                                            <td>--</td>
+                                            <td>11/13/21</td>
+                                            <td><span class="badge badge-secondary">upcoming </span></td>
+                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>skin</td>
+                                            <td>--</td>
+                                            <td>11/14/21</td>
+                                            <td><span class="badge badge-secondary">upcoming </span></td>
+                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>stomach</td>
+                                            <td>--</td>
+                                            <td>11/15/21</td>
+                                            <td><span class="badge badge-secondary">upcoming </span></td>
+                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
+                                        </tr>
+                                    </tbody>
+                                    <!-- <ul class="lessons-list">
+                                        <li>Head</li>
+                                        <li>Heart</li>
+                                        <li>Lungs</li>
+                                    </ul> -->
+                                </table>
+                                <div class="after"></div>
+                            </div>
+                            <h3 class="border-top-0 rounded-0 mt-0 lesson-name"><b>Lesson 2 - DNA</b></h3>
+                            <div  class="px-2 pt-0">
+                                <table class="table">
+                                    <!-- <thead class="b-0">
+                                        <th>Lesson</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </thead> -->
+                                    <tbody>
+                                        <tr>
+                                            <td>Chromosomes</td>
+                                            <td>--</td>
+                                            <td>11/12/21</td>
+                                            <td><span class="badge badge-secondary">upcoming</span></td>
+                                            <td><button type="butt" class="btn btn-success" disabled>Review Class</button></td>
+    
+                                        </tr>
+                                   
+                                    </tbody>
+                                    <!-- <ul class="lessons-list">
+                                        <li>Head</li>
+                                        <li>Heart</li>
+                                        <li>Lungs</li>
+                                    </ul> -->
+                                </table>
+                            </div>                        
+                        </div>
+                    </div>
+                    <div class="activities tag card-box minimized">
+                        <div class="col-12 row m-0 d-flex justify-content-between p-0 tag-header minimized">
+                            <h5 class="p-2"><b>Activities</b></h5>
+                            <div class="toggle-lesson-list minimized" content="activities" minimized=true>
+                                <div></div>
+                            </div>
+                        </div>
+    
+                        <!--<div id="lessons-panel"></div>
+                        <div id="lessons-list">
+                            thesis
+                        </div> -->
+    
+                        <div id="activities" class="tag-panel">
+                            <h3 class="rounded-0 mt-0 d-flex justify-content-between px-3">
+                                <b>Exam</b>
+                                <b>09/28/21</b>
+                            </h3>
+                            <div class="px-2 pt-0" >
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Exam about the human eyes</td>
+                                            <td>14:00 - 15:00</td>
+                                            <td><span class="badge badge-success">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h3 class="rounded-0 mt-0 d-flex justify-content-between px-3">
+                                <b>Research Submission</b>
+                                <b>09/30/21</b>
+                            </h3>
+                            <div class="px-2 pt-0" >
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Research about heart</td>
+                                            <td>10:00 - 17:00</td>
+                                            <td><span class="badge badge-success">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="attendance tag card-box minimized">
+                        <div class="col-12 row m-0 d-flex justify-content-between p-0 tag-header minimized">
+                            <h5 class="p-2"><b>Attendance</b></h5>
+                            <div class="toggle-lesson-list minimized" content="attendance" minimized=true>
+                                <div></div>
+                            </div>
+                        </div>
+    
+                        <!--<div id="lessons-panel"></div>
+                        <div id="lessons-list">
+                            thesis
+                        </div> -->
+    
+                        <div id="attendance" class="tag-panel">
+                            <h3 class="rounded-0 mt-0 d-flex justify-content-between px-3 bg-danger text-white border-danger">
+                                <b>Absents</b>
+                                <b>1</b>
+                            </h3>
+                            <div class="px-2 pt-0" >
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Lesson 1 - Basic Anatomy</td>
+                                            <td>10:00 - 17:00</td>
+                                            <td>11/09/21</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h3 class="rounded-0 mt-0 d-flex justify-content-between px-3 bg-warning text-white border-warning">
+                                <b>Lates</b>
+                                <b>1</b>
+                            </h3>
+                            <div class="px-2 pt-0" >
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Lesson 1 - Basic Anatomy</td>
+                                            <td>10:00 - 17:00</td>
+                                            <td><span class="badge badge-success">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+      
+        <!-- <script src="js/jquery.js"></script> -->
+        <script src="js/functions.js"></script>
+    </body>
+</html>
+
