@@ -148,6 +148,11 @@ a.btn {
   color: #343a40;
 }
 
+.hide {
+  max-height: 100;
+  overflow: hidden;
+}
+
 .tag:not(.maximized):hover{
   box-shadow: 0 0 8px #c1c1c1;
   border: 1px solid #c1c1c1;

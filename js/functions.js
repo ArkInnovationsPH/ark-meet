@@ -51,3 +51,9 @@ $('.toggle-lesson-list').click(function() {
 $('.lesson-name').click(function(){
     $('#current-lesson').text($(this).text())
 })
+
+
+$('.show-reading-materials').click(function() {
+    console.log($(this).attr('target'))
+    console.log(' show reading materials ')
+})
