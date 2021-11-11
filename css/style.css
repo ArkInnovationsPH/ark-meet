@@ -148,9 +148,28 @@ a.btn {
   color: #343a40;
 }
 
-.hide {
-  max-height: 100;
+.reading-materials {
+  max-height: 0;
   overflow: hidden;
+  display: none;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+ transition: all 0.3s
+}
+
+.reading-materials a {
+  font-weight: bold;
+  color: #17a2b8;
+}
+
+.show {
+  max-height: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  opacity: 1;
+  display: table-cell;
 }
 
 .tag:not(.maximized):hover{

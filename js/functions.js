@@ -54,6 +54,8 @@ $('.lesson-name').click(function(){
 
 
 $('.show-reading-materials').click(function() {
-    console.log($(this).attr('target'))
-    console.log(' show reading materials ')
+    let target = $(this).attr('target')
+    $(`#reading-materials-` + target).toggleClass('show')
+    $(`#reading-materials-` + target).toggleClass('hide')
+    $('.reading-materials').not(`#reading-materials-` + target).removeClass('show');
 })
