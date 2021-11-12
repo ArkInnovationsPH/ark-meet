@@ -68,7 +68,7 @@ $('.toggle-subject-details').click(function() {
     if(parent.hasClass('minimized')){
         //expands lessons-panel
         $('.iframe').css({
-            height: '68vh'
+            height: '62vh'
         })
      
         $(this).removeClass('minimized')
