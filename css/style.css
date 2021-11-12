@@ -163,6 +163,34 @@ a.btn {
   color: #17a2b8;
 }
 
+.side-menu-btn {
+    position: absolute;
+    left: -44px;
+    top: 0;
+    padding: 12px;
+    border-radius: 4px 0 0 4px;
+    background: #fff;
+    -webkit-box-shadow: -3px 0 10px 0 rgb(183 192 206 / 20%);
+    box-shadow: -3px 0 10px 0 rgb(183 192 206 / 20%);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.lessons-panel.hide .side-menu-btn {
+  opacity: 1;
+}
+
+.lessons-panel.hide {
+  position: fixed;
+  right: -316px
+}
+
+.lessons-panel {
+  position: fixed;
+  right: 0;
+
+}
+
 .show {
   max-height: 100px;
   padding-top: 10px;
@@ -172,7 +200,12 @@ a.btn {
   display: table-cell;
 }
 
-.tag:not(.maximized):hover{
+.iframe {
+  height: 68vh;
+  transition: all 0.3s ;
+}
+
+.tag:not(.maximized):hover, .side-menu-btn:hover{
   box-shadow: 0 0 8px #c1c1c1;
   border: 1px solid #c1c1c1;
   transform: scale(1.02);
@@ -186,13 +219,16 @@ table.table button {
     font-size: 14;
     font-weight: bold;
 }
-.toggle-lesson-list {
+.toggle-lesson-list,.toggle-subject-details {
     margin: 1em;
     width: 20px;
   }
   
   .toggle-lesson-list:after, 
+  .toggle-subject-details:after, 
   .toggle-lesson-list:before, 
+  .toggle-subject-details:before, 
+  .toggle-subject-details div,
   .toggle-lesson-list div {
     background-color: #343a40;
     border-radius: 3px;
@@ -203,16 +239,19 @@ table.table button {
     transition: all .2s ease-in-out;
   }
 
-  .card-box.minimized .toggle-lesson-list:before {
+  .card-box.minimized .toggle-lesson-list:before,
+  .card-box.minimized .toggle-subject-details:before {
     transform: unset;  
   }
   
-  .card-box.minimized .toggle-lesson-list:after {
+  .card-box.minimized .toggle-lesson-list:after,
+  .card-box.minimized .toggle-subject-details:after {
     transform: unset;  
   }
 
   
-  .card-box.minimized .toggle-lesson-list div {
+  .card-box.minimized .toggle-lesson-list div,
+  .card-box.minimized .toggle-subject-details div {
     transform: unset;  
   }
 
@@ -228,15 +267,18 @@ table.table button {
     transform: scale(0);
   } */
 
-  .card-box:not(.minimized) .toggle-lesson-list:before {
+  .card-box:not(.minimized) .toggle-lesson-list:before,
+  .card-box:not(.minimized) .toggle-subject-details:before {
     transform: translateY(2px) rotate(135deg);
   }
   
-  .card-box:not(.minimized) .toggle-lesson-list:after {
+  .card-box:not(.minimized) .toggle-lesson-list:after,
+  .card-box:not(.minimized) .toggle-subject-details:after {
     transform: translateY(-8px) rotate(-135deg);
   }
   
-  .card-box:not(.minimized) .toggle-lesson-list div {
+  .card-box:not(.minimized) .toggle-lesson-list div,
+  .card-box:not(.minimized) .toggle-subject-details div {
     transform: scale(0);
   }
 
