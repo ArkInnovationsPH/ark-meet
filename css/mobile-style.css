@@ -23,13 +23,13 @@
 
 @media (max-width: 991.98px) and (orientation: portrait) {
 
-    #lessons {
+    /* #lessons {
         display: none;
-    }
+    } */
 
-    #mobile-lessons {
+    /* #mobile-lessons {
         display: block;
-    }
+    } */
 
     #activities {
         display: none;
@@ -50,13 +50,13 @@
 
 @media only screen and (max-width: 600px) {
 
-    #lessons {
+    /* #lessons {
         display: none;
     }
 
     #mobile-lessons {
         display: block;
-    }
+    } */
 
     #activities {
         display: none;
