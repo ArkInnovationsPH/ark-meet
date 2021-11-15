@@ -43,6 +43,7 @@ a.btn {
   color: white
 }
 
+
 .disabled-link {
   pointer-events: none;
 }
@@ -53,6 +54,30 @@ a.btn {
 
 #lessons, #activities, #attendance {
     transition: all 0.3s;
+}
+
+#lessons {
+display: block;
+}
+
+#mobile-lessons {
+  display: none;
+}
+
+#activities {
+  display: block;
+  }
+  
+#mobile-activities {
+  display: none;
+}
+
+#attendance {
+  display: block;
+  }
+  
+#mobile-attendance {
+  display: none;
 }
 
 .table-limit {
@@ -99,6 +124,7 @@ a.btn {
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 /* Track */
@@ -164,9 +190,9 @@ a.btn {
 }
 
 .side-menu-btn {
-    position: absolute;
-    left: -44px;
-    top: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1;
     padding: 12px;
     border-radius: 4px 0 0 4px;
     background: #fff;
@@ -176,18 +202,23 @@ a.btn {
     transition: all 0.3s;
 }
 
-.lessons-panel.hide .side-menu-btn {
-  opacity: 1;
-}
 
-.lessons-panel.hide {
+#sidemenu-overlay {
   position: fixed;
-  right: -316px
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
 }
 
 .lessons-panel {
   position: fixed;
   right: 0;
+  z-index: 2;
 
 }
 

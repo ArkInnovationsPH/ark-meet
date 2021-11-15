@@ -12,15 +12,15 @@
         <script src="js/components/jquery-ui.js"></script>
         <link rel='stylesheet', type='text/css' href='css/components/bootstrap.css'>
         <link rel='stylesheet', type='text/css' href='css/style.css'>
+        <link rel='stylesheet', type='text/css' href='css/mobile-style.css'>
         <script>
             $( function() {
-                $( "#lessons" ).accordion();
-                $( "#activities" ).accordion();
-                $( "#attendance" ).accordion();
+                $( "#lessons, #mobile-lessons,#activities, #mobile-activities,#attendance" ).accordion();
             } );
         </script>
     </head>
     <body>
+        <div id="sidemenu-overlay"></div>
         <header>
             <span class="logo">ArkEd</span>
             <div class="col-12 lesson">
@@ -28,6 +28,9 @@
             </div>
         </header>
         <div class="p-3 ">
+            <a href="#" class="side-menu-btn">
+                <img src="images/books-icon.png" alt="logo" height="25" width="25" class="background-logo">
+            </a>
             <div class="row">
 
                 <div class="col-md-8 video-player">
@@ -42,12 +45,12 @@
                                 </div>
                             </div>
                             <div class="row">
-                              <div class="col-4 mt-4">
+                              <div class="col-md-4 mt-4">
                                   <!-- <h6 class="card-subtitle mb-4 text-muted">Subject Name: Human Anatomy</h6> -->
                                   <h6 class="card-subtitle mb-3 text-muted">Description: <b>Study of Human Body</b></h6>
                                   <h6 class="card-subtitle mb-3 text-muted">Teacher Name: <b>John Doe</b></h6>
                                 </div>
-                                <div class="col-4 mt-4">
+                                <div class="col-md-4 mt-4">
                                     <h6 class="card-subtitle mb-3 text-muted">Schedule:</h6>
                                     <h6 class="card-subtitle mb-3 text-muted"><b>Monday - 10:45 - 11:30 </b></h6>
                                     <h6 class="card-subtitle mb-3 text-muted"><b>Tuesday - 14:00 - 15:00 </b></h6>
@@ -64,9 +67,7 @@
                 </div>
                 
                 <div class="col-md-4 p-0 lessons-panel">
-                    <a href="#" class="side-menu-btn">
-                        <img src="images/books-icon.png" alt="logo" height="25" width="25" class="background-logo">
-                    </a>
+               
                     <div class="lesson-summary tag card-box maximized">
                         <div class="col-12 row m-0 d-flex justify-content-between p-0 tag-header">
                             <h5 class="p-2"><b>Lessons</b></h5>
@@ -74,189 +75,361 @@
                                 <div></div>
                             </div>
                         </div>
-    
-                        <!--<div id="lessons-panel"></div>
-                        <div id="lessons-list">
-                            thesis
-                        </div> -->
+
     
                         <div id="lessons" class="tag-panel">
                             <h3 class="rounded-0 mt-0 lesson-name"><b>Lesson 1 - Basic Anatomy </b></h3>
                             <div class="px-0 pt-0 table-limit" >
-                                <div class="before"></div>
-                                <table class="table ">
-                                    <!-- <thead class="b-0">
-                                        <th>Lesson</th>
-                                        <th>Description</th>
-                                        <th>Date</th>
-                                        <th>Status</th>
-                                    </thead> -->
-                                    <tbody>
-                                        <tr>
-                                            <td>Head</td>
-                                            <td>--</td>
-                                            <td>11/09/21</td>
-                                            <td><span class="badge badge-success">complete</span></td>
-                                            <td><a href="#" target="_blank" class="btn btn-success">Review Class</a></td>
-                                            <!-- <td><a href="http://www.drcroes.com/uploads/8/1/2/8/8128660/ch_1_introduction_to_anatomy.pdf" target="_blank" class="btn btn-info"><img src="images/open-book.png" alt="logo" height="22" width="22" class="background-logo"></a></td> -->
-                                            <td><span class="btn btn-info show-reading-materials" target="1"><img src="images/open-book.png" alt="logo" height="22" width="22" class="background-logo"></span></td>
+                                <ul class="pl-0">
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>The Human Brain</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/09/21</span>
+                                                <span class="badge badge-success ml-2">complete</span>
 
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="border-top-0 px-2 py-0">
-                                                <div id="reading-materials-1" class="reading-materials hide d-flex">
-                                                    <div class="col-4 px-0">
-                                                        <a href="https://www.youtube.com/watch?v=pRFXSjkpKWA" target="_blank">The Human Brain</a>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <span class="ml-3">contains pictures of human brain</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Heart</td>
-                                            <td>--</td>
-                                            <td>11/10/21</td>
-                                            <td><span class="badge badge-success">complete</span></td>
-                                            <td><a href="#" target="_blank" class="btn btn-success" >Review Class</a></td>
-                                            <td><span class="btn btn-info show-reading-materials" target="2"><img src="images/open-book.png" alt="logo" height="22" width="22" class="background-logo"></span></td>
-                                        </tr>
-                                         <tr>
-                                            <td colspan="6" class="border-top-0 px-2 py-0">
-                                                <div id="reading-materials-2" class="reading-materials hide d-flex">
-                                                    <div class="col-4 px-0">
-                                                        <a href="https://www.youtube.com/watch?v=UMTDmP81mG4" target="_blank">Anatomy of the Heart</a>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <span class="ml-3">A short video about the human heart. </span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                      
-                                        <tr>
-                                            <td>Lungs</td>
-                                            <td>--</td>
-                                            <td>11/11/21</td>
-                                            <td><span class="badge badge-warning">on going </span></td>
-                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
-                                            <td><span class="btn btn-info show-reading-materials" target="3"><img src="images/open-book.png" alt="logo" height="22" width="22" class="background-logo"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="border-top-0 px-2 py-0">
-                                                <div id="reading-materials-3" class="reading-materials hide d-flex">
-                                                    <div class="col-4 px-0">
-                                                        <a href="https://www.youtube.com/watch?v=Smm0VdIbY9k" target="_blank">Lung Anatomy</a>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <span class="ml-3">A lecture about the human lungs. </span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                   
-                                        <tr>
-                                            <td>Eyes</td>
-                                            <td>--</td>
-                                            <td>11/12/21</td>
-                                            <td><span class="badge badge-secondary">upcoming </span></td>
-                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
-                                            <td><span class="btn btn-info show-reading-materials" target="4"><img src="images/open-book.png" alt="logo" height="22" width="22" class="background-logo"></span></td>
+                                                <!-- <a href="#" target="_blank" class="btn btn-success">Review</a> -->
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">Discussion about the insides of the human head: the brain. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="1"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-success  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-1" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=pRFXSjkpKWA" target="_blank">The Human Brain</a>
+                                            <span class="mt-1 subtext">contains pictures of human brain</span>
+                                        </div>
+                                    </li>
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>The Heart</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/10/21</span>
+                                                <span class="badge badge-success ml-2">complete</span>
 
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="border-top-0 px-2 py-0">
-                                                <div id="reading-materials-4" class="reading-materials hide d-flex">
-                                                    <div class="col-4 px-0">
-                                                        <a href="https://www.youtube.com/watch?v=7lBtlGvS1Gc" target="_blank">Eyeball Anatomy</a>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <span class="ml-3">Visual representation of the eye. </span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                     
-                                        <tr>
-                                            <td>Neck</td>
-                                            <td>--</td>
-                                            <td>11/13/21</td>
-                                            <td><span class="badge badge-secondary">upcoming </span></td>
-                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
-                                            <td><span class="btn btn-info show-reading-materials" target="5"><img src="images/open-book.png" alt="logo" height="22" width="22" class="background-logo"></span></td>
+                                                <!-- <a href="#" target="_blank" class="btn btn-success">Review</a> -->
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">The anatomy of the heart, its Structures, and its basic functions. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="2"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-success  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-2" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=UMTDmP81mG4" target="_blank">Anatomy of the Heart</a>
 
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="border-top-0 px-2 py-0">
-                                                <div id="reading-materials-5" class="reading-materials hide d-flex">
-                                                    <div class="col-4 px-0">
-                                                        <a href="https://www.youtube.com/watch?v=Mrtt9s72a7I" target="_blank">The Neck</a>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <span class="ml-3">Anatomy tutorial on the organisation of the neck. </span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>skin</td>
-                                            <td>--</td>
-                                            <td>11/14/21</td>
-                                            <td><span class="badge badge-secondary">upcoming </span></td>
-                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
-                                            <td><span class="btn btn-info show-reading-materials" target="6"><img src="images/open-book.png" alt="logo" height="22" width="22" class="background-logo"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6" class="border-top-0 px-2 py-0">
-                                                <div id="reading-materials-6" class="reading-materials hide d-flex">
-                                                    <div class="col-4 px-0">
-                                                        <a href="https://www.youtube.com/watch?v=xUW3E6eDbzU" target="_blank">Anatomy of the Skin</a>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <span class="ml-3">Introduction to Skin Anatomy.</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <!-- <ul class="lessons-list">
-                                        <li>Head</li>
-                                        <li>Heart</li>
-                                        <li>Lungs</li>
-                                    </ul> -->
-                                </table>
-                                <div class="after"></div>
+                                            <span class="mt-1 subtext">A short video about the human heart.</span>
+                                        </div>
+                                    </li>
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Lungs</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/11/21</span>
+                                                <span class="badge badge-success ml-2">complete</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">The basic Anatomy and functions of the lungs. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="3"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-secondary disabled-link  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-3" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=Smm0VdIbY9k" target="_blank">Lung Anatomy</a>
+
+                                            <span class="mt-1 subtext">A lecture about the human lungs.</span>
+                                        </div>
+                                    </li>
+
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Oculus - Eye</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/12/21</span>
+                                                <span class="badge badge-success ml-2">complete</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">The Anatomy of the eye. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="4"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-secondary disabled-link pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-4" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=7lBtlGvS1Gc" target="_blank">Eyeball Anatomy</a>
+
+                                            <span class="mt-1 subtext">A Visual representation of the eye.</span>
+                                        </div>
+                                    </li>
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Human neck anatomy</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/13/21</span>
+                                                <span class="badge badge-warning ml-2">on going</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">Neck Anatomy: Muscles, glands, organs. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="5"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-secondary disabled-link  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-5" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=Mrtt9s72a7I" target="_blank">The Neck</a>
+
+                                            <span class="mt-1 subtext">Anatomy tutorial on the organisation of the neck.</span>
+                                        </div>
+                                    </li>
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Skin: Cells and layers </b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/14/21</span>
+                                                <span class="badge badge-secondary ml-2">upcoming</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">The anatomy of the skin by its layers. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="6"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-secondary disabled-link  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-6" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=xUW3E6eDbzU" target="_blank">Anatomy of the Skin</a>
+                                            <span class="mt-1 subtext">Introduction to the Anatomy of the Skin.</span>
+                                        </div>
+                                    </li>
+                                </ul> 
                             </div>
                             <h3 class="border-top-0 rounded-0 mt-0 lesson-name"><b>Lesson 2 - DNA</b></h3>
                             <div  class="px-2 pt-0">
-                                <table class="table">
-                                    <!-- <thead class="b-0">
-                                        <th>Lesson</th>
-                                        <th>Description</th>
-                                        <th>Date</th>
-                                        <th>Status</th>
-                                    </thead> -->
-                                    <tbody>
-                                        <tr>
-                                            <td>Chromosomes</td>
-                                            <td>--</td>
-                                            <td>11/12/21</td>
-                                            <td><span class="badge badge-secondary">upcoming</span></td>
-                                            <td><a href="#" class="btn btn-secondary disabled-link">Review Class</a></td>
-    
-                                        </tr>
-                                   
-                                    </tbody>
-                                    <!-- <ul class="lessons-list">
-                                        <li>Head</li>
-                                        <li>Heart</li>
-                                        <li>Lungs</li>
-                                    </ul> -->
-                                </table>
+                                <ul class="pl-0">
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Chromosomes</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/15/21</span>
+                                                <span class="badge badge-secondary ml-2">upcoming</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">Anatomy of a Chromosomes examined. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <!-- <span class="btn btn-info show-reading-materials mr-2" target="7"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span> -->
+                                            <a href="#" target="_blank" class="btn btn-secondary disabled-link  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <!-- <div id="mobile-reading-materials-7" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=pRFXSjkpKWA" target="_blank">The Human Brain</a>
+                                            <span class="mt-1 subtext">None</span>
+                                        </div> -->
+                                    </li>
+                                </ul>
+                            </div>                        
+                        </div>
+
+                        <div id="mobile-lessons" class="tag-panel">
+                            <h3 class="rounded-0 mt-0 lesson-name"><b>Lesson 1 - Basic Anatomy </b></h3>
+                            <div class="px-0 pt-0 table-limit" >
+                                <ul class="pl-0">
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>The Human Brain</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/09/21</span>
+                                                <span class="badge badge-success ml-2">complete</span>
+
+                                                <!-- <a href="#" target="_blank" class="btn btn-success">Review</a> -->
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">Discussion about the insides of the human head: the brain. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="1"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-success  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-1" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=pRFXSjkpKWA" target="_blank">The Human Brain</a>
+                                            <span class="mt-1 subtext">contains pictures of human brain</span>
+                                        </div>
+                                    </li>
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>The Heart</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/10/21</span>
+                                                <span class="badge badge-success ml-2">complete</span>
+
+                                                <!-- <a href="#" target="_blank" class="btn btn-success">Review</a> -->
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">The anatomy of the heart, its Structures, and its basic functions. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="2"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-success  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-2" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=UMTDmP81mG4" target="_blank">Anatomy of the Heart</a>
+
+                                            <span class="mt-1 subtext">A short video about the human heart.</span>
+                                        </div>
+                                    </li>
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Lungs</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/11/21</span>
+                                                <span class="badge badge-success ml-2">complete</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">The basic Anatomy and functions of the lungs. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="3"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-secondary disabled-link  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-3" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=Smm0VdIbY9k" target="_blank">Lung Anatomy</a>
+
+                                            <span class="mt-1 subtext">A lecture about the human lungs.</span>
+                                        </div>
+                                    </li>
+
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Oculus - Eye</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/12/21</span>
+                                                <span class="badge badge-success ml-2">complete</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">The Anatomy of the eye. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="4"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-secondary disabled-link pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-4" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=7lBtlGvS1Gc" target="_blank">Eyeball Anatomy</a>
+
+                                            <span class="mt-1 subtext">A Visual representation of the eye.</span>
+                                        </div>
+                                    </li>
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Human neck anatomy</b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/13/21</span>
+                                                <span class="badge badge-warning ml-2">on going</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">Neck Anatomy: Muscles, glands, organs. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="5"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-secondary disabled-link  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-5" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=Mrtt9s72a7I" target="_blank">The Neck</a>
+
+                                            <span class="mt-1 subtext">Anatomy tutorial on the organisation of the neck.</span>
+                                        </div>
+                                    </li>
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Skin: Cells and layers </b>
+                                            </div>
+                                            <div>
+                                                <span class="subtext">11/14/21</span>
+                                                <span class="badge badge-secondary ml-2">upcoming</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <span class="subtext">The anatomy of the skin by its layers. </span>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="btn btn-info show-reading-materials mr-2" target="6"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span>
+                                            <a href="#" target="_blank" class="btn btn-secondary disabled-link  pt-1 pb-1">Review</a>
+                                        </div>
+                                        <div id="mobile-reading-materials-6" class="reading-materials hide d-flex flex-column">
+                                            <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=xUW3E6eDbzU" target="_blank">Anatomy of the Skin</a>
+                                            <span class="mt-1 subtext">Introduction to the Anatomy of the Skin.</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="border-top-0 rounded-0 mt-0 lesson-name"><b>Lesson 2 - DNA</b></h3>
+                            <div  class="px-2 pt-0">
+                                    <ul class="pl-0">
+                                        <li  class="list-unstyled p-2 bottom-border">
+                                            <div class="row m-0 d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <b>Chromosomes</b>
+                                                </div>
+                                                <div>
+                                                    <span class="subtext">11/15/21</span>
+                                                    <span class="badge badge-secondary ml-2">upcoming</span>
+                                                </div>
+                                            </div>
+                                            <div class="mb-2 mt-2">
+                                                <span class="subtext">Anatomy of a Chromosomes examined. </span>
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <!-- <span class="btn btn-info show-reading-materials mr-2" target="7"><img src="images/open-book.png" alt="logo" height="20" width="20" class="background-logo"></span> -->
+                                                <a href="#" target="_blank" class="btn btn-secondary disabled-link  pt-1 pb-1">Review</a>
+                                            </div>
+                                            <!-- <div id="mobile-reading-materials-7" class="reading-materials hide d-flex flex-column">
+                                                <a class="text-decoration-underline material-link" href="https://www.youtube.com/watch?v=pRFXSjkpKWA" target="_blank">The Human Brain</a>
+                                                <span class="mt-1 subtext">None</span>
+                                            </div> -->
+                                        </li>
+                                    </ul>
                             </div>                        
                         </div>
                     </div>
+
                     <div class="activities tag card-box minimized">
                         <div class="col-12 row m-0 d-flex justify-content-between p-0 tag-header minimized">
                             <h5 class="p-2"><b>Activities</b></h5>
@@ -265,17 +438,12 @@
                             </div>
                         </div>
     
-                        <!--<div id="lessons-panel"></div>
-                        <div id="lessons-list">
-                            thesis
-                        </div> -->
-    
                         <div id="activities" class="tag-panel">
                             <h3 class="rounded-0 mt-0 d-flex justify-content-between px-3">
                                 <b>Exam</b>
                             </h3>
                             <div class="px-2 pt-0" >
-                                <table class="table">
+                                <table class="table table-limit">
                                     <tbody>
                                         <tr>
                                             <td>Exam about the human eyes</td>
@@ -291,7 +459,7 @@
                                 <b>Research Submission</b>
                             </h3>
                             <div class="px-2 pt-0" >
-                                <table class="table">
+                                <table class="table table-limit">
                                     <tbody>
                                         <tr>
                                             <td>Research about heart</td>
@@ -303,7 +471,60 @@
                                 </table>
                             </div>
                         </div>
+
+                        <div id="mobile-activities" class="tag-panel">
+                            <h3 class="rounded-0 mt-0 d-flex justify-content-between px-3">
+                                <b>Exam</b>
+                            </h3>
+                            <div class="px-2 pt-0" >
+                     
+                                <ul class="pl-0">
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Exam about the human eyes</b>
+                                            </div>
+                                            <div>
+                                                <!-- <span class="subtext">11/15/21</span> -->
+                                                <span class="badge badge-success ml-2">Pending</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-3 d-flex justify-content-between">
+                                            <span class=" mr-3">14:00 - 15:00 </span>
+                                            <span class="">09/28/21</span>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="rounded-0 mt-0 d-flex justify-content-between px-3">
+                                <b>Research Submission</b>
+                            </h3>
+                            <div class="px-2 pt-0" >
+                        
+                                <ul class="pl-0">
+                                    <li  class="list-unstyled p-2 bottom-border">
+                                        <div class="row m-0 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <b>Research about heart</b>
+                                            </div>
+                                            <div>
+                                                <!-- <span class="subtext">11/15/21</span> -->
+                                                <span class="badge badge-success ml-2">Pending</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mt-3 d-flex justify-content-between">
+                                            <span class=" mr-3">10:00 - 17:00 </span>
+                                            <span class="">09/30/21</span>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+
+
                     <div class="attendance tag card-box minimized">
                         <div class="col-12 row m-0 d-flex justify-content-between p-0 tag-header minimized">
                             <h5 class="p-2"><b>Attendance</b></h5>
@@ -312,22 +533,22 @@
                             </div>
                         </div>
     
-                        <!--<div id="lessons-panel"></div>
-                        <div id="lessons-list">
-                            thesis
-                        </div> -->
-    
                         <div id="attendance" class="tag-panel">
                             <h3 class="rounded-0 mt-0 d-flex justify-content-between px-3 bg-danger text-white border-danger">
                                 <b>Absents</b>
-                                <b>1</b>
+                                <b>2</b>
                             </h3>
                             <div class="px-2 pt-0" >
-                                <table class="table">
+                                <table class="table table-limit">
                                     <tbody>
                                         <tr>
-                                            <td>Lesson 1 - Head</td>
+                                            <td>Lesson 1 - The Human Brain</td>
                                             <td>14:00 - 15:00</td>
+                                            <td>11/09/21</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lesson 1 - Oculus - Eye</td>
+                                            <td>10:45 - 11:30</td>
                                             <td>11/09/21</td>
                                         </tr>
                                     </tbody>
@@ -335,7 +556,7 @@
                             </div>
                             <h3 class="rounded-0 mt-0 d-flex justify-content-between px-3 bg-warning text-white border-warning">
                                 <b>Lates</b>
-                                <b>1</b>
+                                <b>2</b>
                             </h3>
                             <div class="px-2 pt-0" >
                                 <table class="table">
@@ -345,10 +566,88 @@
                                             <td>10:45 - 11:30</td>
                                             <td>11/10/21</td>
                                         </tr>
+                                        <tr>
+                                            <td>Lesson 1 - Lungs</td>
+                                            <td>14:00 - 15:00</td>
+                                            <td>11/10/21</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
+    
+                        <div id="mobile-attendance" class="tag-panel">
+                            <div class="row m-0">
+                                <span class="badge badge-danger ml-2 pt-1 pb-1">Absents 2</span>
+                                <span class="badge badge-warning ml-2 pt-1 pb-1">Lates 2</span>
+                                
+                            </div>
+                            <ul class="pl-0">
+                                <li  class="list-unstyled p-2 bottom-border">
+                                    <div class="row m-0 d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <b>Lesson 1 - The Human Brain</b>
+                                        </div>
+                                        <div>
+                                            <span class="badge badge-danger ml-2">Absent</span>
+                                            <!-- <span class="subtext">11/15/21</span> -->
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 mt-1 d-flex justify-content-between">
+                                        <span class=" mr-3">14:00 - 15:00 </span>
+                                        <span class="">11/09/21</span>
+                                    </div>
+                                </li>
+                                <li  class="list-unstyled p-2 bottom-border">
+                                    <div class="row m-0 d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <b>Lesson 1 - The Heart</b>
+                                        </div>
+                                        <div>
+                                            <!-- <span class="subtext">11/15/21</span> -->
+                                            <span class="badge badge-warning ml-2">Late</span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 mt-1 d-flex justify-content-between">
+                                        <span class=" mr-3">10:45 - 11:30 </span>
+                                        <span class="">11/10/21</span>
+                                    </div>
+                                </li>
+                                <li  class="list-unstyled p-2 bottom-border">
+                                    <div class="row m-0 d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <b>Lesson 1 - Lungs</b>
+                                        </div>
+                                        <div>
+                                            <!-- <span class="subtext">11/15/21</span> -->
+                                            <span class="badge badge-warning ml-2">Late</span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 mt-1 d-flex justify-content-between">
+                                        <span class=" mr-3">14:00 - 15:00 </span>
+                                        <span class="">11/11/21</span>
+                                    </div>
+                                </li>
+                                <li  class="list-unstyled p-2 bottom-border">
+                                    <div class="row m-0 d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <b>Lesson 1 - Oculus - Eye</b>
+                                        </div>
+                                        <div>
+                                            <span class="badge badge-danger ml-2">Absent</span>
+                                            <!-- <span class="subtext">11/15/21</span> -->
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 mt-1 d-flex justify-content-between">
+                                        <span class=" mr-3">10:45 - 11:30</span>
+                                        <span class="">11/12/21</span>
+                                    </div>
+                                </li>
+                            </ul>
+                      
+                        </div>
+
+
                     </div>
                 </div>
             </div>

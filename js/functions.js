@@ -1,8 +1,18 @@
 $('#current-lesson').text('Basic Anatomy')
 $('.card-box').css({maxHeight: '400px'})
+if(window.matchMedia("(max-width: 991.98px)").matches) {
+    $('.lessons-panel').removeClass('col-md-4').addClass('col-md-2')
+    $('.lessons-panel').css({right: -($('.lessons-panel').outerWidth()) , opacity: 0})
+    $('.video-player').removeClass('col-md-8').removeClass('col-md-12').addClass('col-md-8')   
+    $('.tag.card-box').removeClass('maximized').addClass('minimized')
+    $('.iframe').css({
+        height: '84vh'
+    })
+    $('.side-menu-btn').css({opacity: 1})
+}
 
 $('.toggle-lesson-list').click(function() {
-  
+ 
     let content = `.${$(this).attr('content')}`;
     let parent = $(this).parent().parent();
     $('.toggle-lesson-list').attr('minimized','false'); 
@@ -11,9 +21,6 @@ $('.toggle-lesson-list').click(function() {
 
     if(parent.hasClass('minimized')){
         //expands lessons-panel
-
-        console.log('expaaand')
-        console.log(parent)
         $(this).removeClass('minimized')
         $(this).addClass('maximized')
 
@@ -25,7 +32,6 @@ $('.toggle-lesson-list').click(function() {
         $('.video-player').removeClass('col-md-12').removeClass('col-md-10').addClass('col-md-8')      
     } else{
         //minimizes lessons-panel
-        console.log('minimiiize')
 
         $(this).addClass('minimized')
         $(this).removeClass('maximized')
@@ -38,10 +44,16 @@ $('.toggle-lesson-list').click(function() {
 
     if(!$('.toggle-lesson-list').is('.maximized')){
         //minimized all
-          $('.lessons-panel').removeClass('col-md-4').addClass('col-md-2').addClass('hide')
-          $('.video-player').removeClass('col-md-8').addClass('col-md-12')      
+        $('.lessons-panel').removeClass('col-md-4').addClass('col-md-2').css({position:'fixed', right: -($('.lessons-panel').outerWidth()),opacity: 0})
+        $('.side-menu-btn').css({opacity: 1})
+        $('#sidemenu-overlay').css({display: 'none'})
+        $("html").css("overflow", "unset");
+
+        $('.video-player').removeClass('col-md-8').addClass('col-md-12')      
     }else{
-        $('.lessons-panel').removeClass('col-md-2').addClass('col-md-4').removeClass('hide')
+        $('.lessons-panel').removeClass('col-md-2').addClass('col-md-4').css({position:'fixed', right: 0, opacity: 1})
+        $('.side-menu-btn').css({opacity: 0})
+
         $('.video-player').removeClass('col-md-12').addClass('col-md-8')
 
     }
@@ -56,17 +68,27 @@ $('.lesson-name').click(function(){
 })
 
 $('.side-menu-btn').click(function() {
-    $('.lessons-panel').removeClass('hide')
-    $('.video-player').removeClass('col-md-12').addClass('col-md-10')
+    if(window.matchMedia("(max-width: 991.98px)").matches) {
+        $('#sidemenu-overlay').css({display: 'block'})
+        $("html").css("overflow", "hidden");
+        $('.lessons-panel').removeClass('p-0').css({paddingRight: '10px', paddingLeft: '10px', maxHeight: '85vh' , overflow: 'auto'})
+    }
+    $('.lessons-panel').css({position:'fixed', right: 0,opacity: 1})
+    $('.side-menu-btn').css({opacity: 0})
+    $('.lesson-summary').removeClass('minimized').addClass('maximized')
+    $('.toggle-lesson-list[content="lesson-summary"]').removeClass('minimized').addClass('maximized')
+    $('.video-player').removeClass('col-md-12').addClass('col-md-8')
+    $('.lessons-panel').removeClass('col-md-2').addClass('col-md-4')
+
 })
 
+
 $('.toggle-subject-details').click(function() {
-    console.log('test')
     let parent = $(this).parent().parent();
         let content = `.${$(this).attr('content')}`;
 
     if(parent.hasClass('minimized')){
-        //expands lessons-panel
+        //expands subject-details
         $('.iframe').css({
             height: '62vh'
         })
@@ -79,7 +101,7 @@ $('.toggle-subject-details').click(function() {
         $(content).addClass('maximized')
 
     } else{
-        //minimizes lessons-panel
+        //minimizes subject-details
         $('.iframe').css({
             height: '84vh'
         })
@@ -92,9 +114,27 @@ $('.toggle-subject-details').click(function() {
     }
 })
 
+
 $('.show-reading-materials').click(function() {
     let target = $(this).attr('target')
-    $(`#reading-materials-` + target).toggleClass('show')
-    $(`#reading-materials-` + target).toggleClass('hide')
-    $('.reading-materials').not(`#reading-materials-` + target).removeClass('show');
+    $(`#reading-materials-${target}, #mobile-reading-materials-${target}` ).toggleClass('show')
+    $(`#reading-materials-${target}, #mobile-reading-materials-${target}`).toggleClass('hide')
+    $('.reading-materials').not(`#reading-materials-${target}, #mobile-reading-materials-${target}`).removeClass('show');
 })
+
+$(window).resize(function(){
+    $("#lessons, #mobile-lessons,#activities, #mobile-activities,#attendance").accordion("refresh");
+    $('#sidemenu-overlay').css({display: 'none'})
+    $("html").css("overflow", "unset");
+
+    $('.card-box').removeClass('maximized').addClass('minimized')
+    $('.card-box').removeClass('maximized').addClass('minimized')
+    $('.side-menu-btn').css({opacity: 1})
+
+    $('.lessons-panel').removeClass('col-md-4').addClass('col-md-2').css({position:'fixed', right: -($('.lessons-panel').outerWidth()),opacity: 0})
+    $('.iframe').css({
+        height: '84vh'
+    })
+    $('.video-player').removeClass('col-md-8').removeClass('col-md-10').addClass('col-md-12')      
+
+});
